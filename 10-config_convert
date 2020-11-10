@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat /data/options.json | python3 /home/sevicontrol/json2yaml.py > /home/sevicontrol/config.yaml

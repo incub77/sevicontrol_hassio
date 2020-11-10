@@ -1,0 +1,59 @@
+{
+  "name": "Sevicontrol",
+  "version": "0.9alpha",
+  "slug": "sevicontrol",
+  "url": "https://github.com/incub77/sevicontrol/",
+  "description": "Control your home ventilation system!",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "webui": "http://[HOST]:[PORT:80]",
+  "boot": "auto",
+  "panel_icon": "mdi:fan",
+  "options": {
+    "panel": {        
+      "device": "dummy",
+      "baudrate": 1000
+      },                
+    "controller": {
+      "device": "dummy",
+      "baudrate": 1000
+      },          
+    "link": {     
+      "url": ""
+      },
+    "mqtt": {
+      "url": "",
+      "port":8883,
+      "use_ssl": true,
+      "validate_cert": false,
+      "user": "",
+      "passwd": ""
+    }
+
+  },
+  "schema": {
+    "panel": {
+      "device": "str",
+      "baudrate": "int"
+      },
+    "controller": {
+      "device": "str",
+      "baudrate": "int" 
+      },
+    "link": {
+      "url": "str?"
+      },
+    "mqtt": {
+      "url": "str?",
+      "port": "int?",
+      "use_ssl": "bool?",
+      "validate_cert": "bool?",
+      "user": "str?",
+      "passwd": "password?"
+    }
+  },
+  "ports": {
+    "80/tcp": 8000
+  }
+}
+
