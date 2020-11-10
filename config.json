@@ -9,7 +9,10 @@
   "webui": "http://[HOST]:[PORT:80]",
   "boot": "auto",
   "panel_icon": "mdi:fan",
-  "devices": ["/dev/serial:/dev/serial:rwm"],
+  "devices": ["/dev/ttyUSB0:/dev/ttyUSB0:rwm",
+              "/dev/ttyUSB1:/dev/ttyUSB1:rwm",
+              "/dev/ttyUSB2:/dev/ttyUSB2:rwm",
+              "/dev/ttyUSB3:/dev/ttyUSB3:rwm"],
   "options": {
     "panel": {        
       "device": "dummy",
