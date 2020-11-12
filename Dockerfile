@@ -19,7 +19,8 @@ WORKDIR /etc/services.d/nginx
 RUN printf "#!/usr/bin/execlineb -P\nnginx -g \"daemon off;\"" > run
 
 WORKDIR /etc/services.d/sevicontrol
-RUN printf "#!/usr/bin/execlineb -P\ncd /home/sevicontrol\ngunicorn -u sevictl -g sevictl --bind localhost:8080 SeviControl:app" > run
+#RUN printf "#!/usr/bin/execlineb -P\ncd /home/sevicontrol\ngunicorn -u sevictl -g sevictl --bind localhost:8080 SeviControl:app" > run
+RUN printf "#!/usr/bin/execlineb -P\ncd /home/sevicontrol\ngunicorn --bind localhost:8080 SeviControl:app" > run
 
 WORKDIR /home/sevicontrol
 
