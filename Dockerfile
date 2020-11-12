@@ -12,7 +12,7 @@ RUN wget -qO- https://github.com/incub77/sevicontrol/archive/master.tar.gz | tar
     && pip3 install --no-cache --upgrade pip PySerial flask flask-cors pyyaml requests gunicorn paho-mqtt\
     && addgroup -S sevictl \
     && adduser -S -H -s /sbin/nologin -G sevictl sevictl \
-    && printf "/home/sevicontrol true sevictl:sevictl - -" > /etc/fix-attrs.d/01-sevicontrol-dir
+    && printf "/home/sevicontrol true sevictl:sevictl - -" > /etc/fix-attrs.d/01-sevicontrol-dir \
     && printf "/dev/ttyUSB0 false root 0666 -" > /etc/fix-attrs.d/02-ttyusb0
 
 
