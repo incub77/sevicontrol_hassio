@@ -13,6 +13,8 @@
               "/dev/ttyUSB1:/dev/ttyUSB1:rwm",
               "/dev/ttyUSB2:/dev/ttyUSB2:rwm",
               "/dev/ttyUSB3:/dev/ttyUSB3:rwm"],
+  "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE", "SYS_RESOURCE", "SYS_PTRACE",
+                  "SYS_MODULE", "DAC_READ_SEARCH"],
   "options": {
     "panel": {        
       "device": "dummy",
