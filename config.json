@@ -1,12 +1,14 @@
 {
   "name": "Sevicontrol",
-  "version": "0.9delta",
+  "version": "0.91beta",
   "slug": "sevicontrol",
   "url": "https://github.com/incub77/sevicontrol/",
   "description": "Control your home ventilation system!",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "webui": "http://[HOST]:[PORT:80]",
+  "ingress": true,
+  "ingress_port": 8000
   "boot": "auto",
   "panel_icon": "mdi:fan",
   "devices": ["/dev/ttyUSB0:/dev/ttyUSB0:rwm",
