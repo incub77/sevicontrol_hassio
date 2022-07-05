@@ -31,4 +31,4 @@ WORKDIR /home/sevicontrol
 COPY json2yaml.py .
 COPY 10-config_convert /etc/cont-init.d/
 
-ENTRYPOINT ["/init"]
+#ENTRYPOINT ["/init"]
