@@ -18,6 +18,7 @@ RUN wget -qO- https://github.com/incub77/sevicontrol/archive/master.tar.gz | tar
     && printf "/dev/ttyUSB2 false root 0666 -" > /etc/fix-attrs.d/04-ttyusb2 \
     && printf "/dev/ttyUSB3 false root 0666 -" > /etc/fix-attrs.d/05-ttyusb3
 
+VOLUME ["/run"]
 
 WORKDIR /etc/services.d/nginx
 RUN printf "#!/usr/bin/execlineb -P\nnginx -g \"daemon off;\"" > run
