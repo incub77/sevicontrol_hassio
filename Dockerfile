@@ -19,16 +19,15 @@ RUN wget -qO- https://github.com/incub77/sevicontrol/archive/master.tar.gz | tar
     && printf "/dev/ttyUSB3 false root 0666 -" > /etc/fix-attrs.d/05-ttyusb3
 
 WORKDIR /etc/services.d/nginx
-RUN printf "#!/usr/bin/execlineb -P\nnginx -g \"daemon off;\"" > run
+RUN printf "#!/usr/bin/execlineb -P\nnginx -g \"daemon off;\"" > run && chown +x run
 
 WORKDIR /etc/services.d/sevicontrol
 #RUN printf "#!/usr/bin/execlineb -P\ncd /home/sevicontrol\ngunicorn -u sevictl -g sevictl --bind localhost:8080 SeviControl:app" > run
-RUN printf "#!/usr/bin/execlineb -P\ncd /home/sevicontrol\ngunicorn --bind localhost:8080 SeviControl:app" > run
-RUN chown +x run
+RUN printf "#!/usr/bin/execlineb -P\ncd /home/sevicontrol\ngunicorn --bind localhost:8080 SeviControl:app" > run && chown +x run
 
 WORKDIR /home/sevicontrol
 
 COPY json2yaml.py .
-COPY 10-config_convert /etc/cont-init.d/
+COPY --chmod=777 10-config_convert /etc/cont-init.d/
 
 #ENTRYPOINT ["/init"]
