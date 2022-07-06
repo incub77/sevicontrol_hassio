@@ -29,8 +29,8 @@ WORKDIR /home/sevicontrol
 
 COPY json2yaml.py .
 
-COPY --chmod=777 10-config_convert /etc/cont-init.d/
-COPY --chmod=777 nginx_run /etc/services.d/nginx/run
-COPY --chmod=777 sevicontrol_run /etc/services.d/sevicontrol/run
+COPY 10-config_convert /etc/cont-init.d/
+COPY nginx_run /etc/services.d/nginx/run
+COPY sevicontrol_run /etc/services.d/sevicontrol/run
 
 #ENTRYPOINT ["/init"]
